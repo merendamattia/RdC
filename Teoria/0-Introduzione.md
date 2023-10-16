@@ -1,3 +1,7 @@
+# Index
+
+```table-of-contents
+```
 # Introduzione - Reti di Calcolatori
 
 Una **rete di calcolatori** è un insieme di nodi di elaborazione **autonomi** tra loro e **connessi** mediante un opportuno sistema di comunicazione, in grado di interagire attraverso scambio di messaggi al fine di consentire alle applicazioni in esecuzione sui nodi di comunicare tra loro.
@@ -57,6 +61,11 @@ Caratteristiche che può avere un canale:
 - **Multi-Accesso**: comunicazione tra n nodi tramite bus (wireless)
 
 ![[MultiAccesso.svg]]
+
+[[#Index|Torna all'indice]]
+
+---
+
 ## LAN (Local Area Network)
 
 I mezzi trasmissivi multi-accesso possono essere utilizzati per realizzare un particolare tipo di rete detta LAN (Local Area Network) che include tutti i nodi che condividono lo stesso canale.
@@ -76,6 +85,10 @@ Il processo per individuare ed utilizzare il percorso su cui far transitare i me
 	I dati della comunicazione sono frazionati in “pacchetti” con una lunghezza massima stabilita, i nodi di transito (router, switch, ..) hanno il compito di instradare ogni pacchetto. 
 	Il destinatario li riassembla e ricostruisce il messaggio.
 
+[[#Index|Torna all'indice]]
+
+--- 
+
 ## ISO-OSI - Architettura a strati
 
 
@@ -87,6 +100,11 @@ L'architettura a strati ha alcuni vantaggi:
 - Strati diversi possono essere sviluppati da enti diversi.
 
 ISO-OSI scompone la comunicazione in 7 livelli, lo scopo di ciascun strato è quello di fornire servizi agli strati superiori utilizzando i servizi forniti dai livelli inferiori.
+
+[[#Index|Torna all'indice]]
+
+--- 
+
 ### Layer:
 [[1-livello_fisico]]
 [[2-livello_collegamento]]
@@ -109,3 +127,7 @@ ISO-OSI scompone la comunicazione in 7 livelli, lo scopo di ciascun strato è qu
 Rispetto al modello OSI abbiamo che il TCP/IP ha condensato il livello rete e collegamento nel primo layer e non troviamo più i livelli Presentazione e Sessione.
 
 >Vedi appunti TCP/IP per la spiegazione dettagliata
+
+[[#Index|Torna all'indice]]
+
+--- 

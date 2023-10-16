@@ -1,3 +1,7 @@
+# Index
+
+```table-of-contents
+```
 # Livello Fisico - ISO/OSI
 
 Il <mark style="background: #946EFA">Livello Fisico</mark> riceve dal livello superiore (Collegamento) i frame da trasmettere, li converte in una sequenza di bit, tramite un *adattatore*, e li riversa sul canale in cui troverà altri nodi collegati, a questo punto i bit verranno poi decodificati, tramite un *adattatore*, dal livello fisico del nodo destinatario.
@@ -17,7 +21,7 @@ Il trasferimento avviene utilizzando un **Mezzo Trasmissivo** su cui i bit vengo
 ---
 
 **Vediamo alcune <mark style="background: #946EFA;">caratteristiche</mark> per cui bisogna tenere conto per la scelta del mezzo trasmissivo:**
-#### Banda Passante (Hz)
+### Banda Passante (Hz)
 E' una banda che, contenente intervalli di frequenze, viene utilizzata per la codifica dei dati, in cui l'[[#Attenuazione (dB)]] tende ad essere **più bassa e costante possibile**.
 Solitamente la banda passante (larghezza) è determinata dal mezzo fisico che scegliamo di utilizzare, ma possiamo anche limitarla artificialmente tramite *filtri passa banda*.
 <mark style="background: #946EFA;">Le onde</mark> vengono misurate in base alla loro frequenza f (Hz) o lunghezza λ (metri), il prodotto di queste due grandezze definiscono la <mark style="background: #946EFA;">velocità di propagazione v.</mark>
@@ -65,6 +69,8 @@ dove:
 - H = la banda passante analogica (Hz)
 - S = potenza del segnale
 - N = potenza del rumore
+
+[[#Index|Torna all'indice]]
 
 ---
 <p style="color: #946EFA; ">Esercizio:</p>
@@ -117,6 +123,8 @@ Se un nodo di transito utilizza delle code di trasmissione, si deve introdurre u
 #### Tempo di elaborazione del destinatario
 Tempo che viene impiegato per la decodifica e la decompressione dell'informazione ricevuta.
 
+[[#Index|Torna all'indice]]
+
 ---
 ## Cavi di trasmissione
 
@@ -151,6 +159,8 @@ Per trasmissione dati viene modulata l’ampiezza, la frequenza o la fase delle 
 
 Al crescere della frequenza aumenta l'ampiezza del canale, ma peggiora l'interazione con l'ambiente.
 Un esempio comune riguarda le trasmissioni radio, aumentando la frequenza del segnale, si può ottenere una maggiore larghezza di banda disponibile per la trasmissione di dati. Tuttavia, a frequenze più elevate, il segnale tende ad essere più suscettibile a interferenze e attenuazioni causate da elementi dell'ambiente circostante, come edifici, ostacoli naturali o altre fonti di interferenza elettronica.
+
+[[#Index|Torna all'indice]]
 
 ---
 ## Modulazione digitale
@@ -211,6 +221,8 @@ Esistono diverse tecniche di per implementare il multiplexing, le principali son
 - **OFDM (Orthogonal Frequency Division Multiplexing)** 
 	E' una tecnica FDM in cui le frequenze portanti sono tra loro ortogonali e viene utilizzata nelle principali tecnologie per trasmissione dati quali ADSL, WiFi 802.11g e 802.11n, WiMAX e nei sistemi cellulari LTE.
 
+[[#Index|Torna all'indice]]
+
 ---
 ## Il sistema telefonico
 Il sistema telefonico (PSTN - Public Switched Telephone Network) è una rete specializzata per la trasmissione di uno specifico tipo di dato: <mark style="background: #946EFA;"> la voce analogica.</mark>
@@ -226,6 +238,8 @@ Il segnale analogico (come quello proveniente da una chiamata telefonica) viene 
 I valori digitali ottenuti dal processo di quantizzazione vengono quindi codificati in un formato specifico, <mark style="background: #946EFA;">PCM</mark>, comunemente si utilizza una rappresentazione binaria per i valori quantizzati, i dati digitali così ottenuti possono essere trasmessi attraverso reti di comunicazione digitali.
 Nel ricevitore, il processo viene invertito, il segnale ricostruito viene convertito nuovamente in un formato analogico, in prossimità della destinazione, utilizzando un dispositivo chiamato Codec (coder-decoder).
 In questo caso il multiplexing delle portanti avviene in Time Division Multiplexing (TDM, visto precedentemente), ovvero suddividendo il tempo del canale in slot che si ripetono ciclicamente.
+
+[[#Index|Torna all'indice]]
 
 ---
 <p style="color: #946EFA;">Esempio:</p>
@@ -258,3 +272,7 @@ L'ultimo miglio in rame limita le prestazioni di ADSL, le compagnie telefoniche 
 FttC (Fiber to the Cabinet, ovvero l'armadio in strada) può arrivare ad una banda di 35Mhz e una velocità di 300 Mb/s.
 FttH (Fiber to the Home) arriva a 1 Gb/s.
 Queste tecnologie vengono genericamente riferite come FttX.
+
+[[#Index|Torna all'indice]]
+
+---

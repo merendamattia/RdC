@@ -1,4 +1,9 @@
+# Index
+
+```table-of-contents
+```
 # Livello Data - Link
+
 Il livello Data-Link è responsabile di fornire un mezzo affidabile per il trasferimento di dati tra nodi adiacenti in una rete di computer. Questi nodi possono essere collegati attraverso canali punto-punto o su una rete multi-accesso.
 Per garantire una comunicazione affidabile, il livello Data-Link suddivide il flusso di dati in unità discrete chiamate <mark style="background: #946EFA;">frame.</mark> Un frame è un pacchetto di dati di lunghezza massima fissa o prefissata, questo processo di suddivisione aiuta a gestire in modo più efficiente la trasmissione dei dati sulla rete.
 Ogni frame è composto da tre parti principali:
@@ -9,6 +14,7 @@ Ogni frame è composto da tre parti principali:
 Una volta che il frame è stato creato con il payload e le informazioni di servizio appropriate, viene trasmesso attraverso il mezzo di comunicazione verso il nodo di destinazione, qui, il nodo ricevente decodifica l'header per ottenere le informazioni di controllo necessarie e il payload per estrarre i dati. Vengono eseguite anche le verifiche degli errori utilizzando le informazioni di servizio nel trailer.
 
 ![[Pacchetto.svg]]
+[[#Index|Torna all'indice]]
 
 ---
 #### Servizi offerti al livello Network (Rete)
@@ -23,6 +29,7 @@ Vediamo i diversi tipi di servizi che possono essere forniti al livello di rete 
 	  - Invio dati numerati e conferme
 	  - Chiusura della connessione
 	 Tuttavia, questo servizio ha un overhead elevato e di solito non è comunemente utilizzato a livello Data-Link. È più comunemente implementato a livelli superiori, come nel protocollo TCP, che opera a livello di trasporto.
+
 
 ---
 
@@ -49,6 +56,8 @@ Se i flussi sono **Bit-Oriented** si può utilizzare il <mark style="background:
 Flusso iniziale: 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 0
 Aggiunta dei stuffed bits: 0 1 1 1 1 1 <span style="color: #946EFA;">0</span> 1 1 1 1 1 <span style="color: #946EFA;">0</span> 1 1 1 1 1 <span style="color: #946EFA;">0</span> 1 0 0 1 0
 Flusso elaborato dal destinatario: 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 0
+
+[[#Index|Torna all'indice]]
 
 ---
 
@@ -100,6 +109,8 @@ Il risultato, senza errori di trasmissione è una sequenza di 1, altrimenti c’
 >adatto per l'implementazione software e per questo non è usato a livello Data-Link ma nei livelli superiori.
 
 *Attenzione: il termine **Checksum** è spesso utilizzato per intendere in generale le tecniche per verificare l'integrità di un dato o di un messaggio.*
+
+[[#Index|Torna all'indice]]
 
 ----
 
@@ -159,6 +170,9 @@ Nascendo dal mondo della telefonia, abbiamo quindi bisogno di adattare i princip
 
 >ATM non ha avuto successo al di fuori delle reti telefoniche, se non per la realizzazione di reti WAN, viceversa la telefonia sta diventando sempre più una applicazione di Internet.
 
+[[#Index|Torna all'indice]]
+
+---
 ## Local Area Network
 Un canale Multi-Accesso (o canale broadcast) è un canale condiviso per l'accesso diretto tra più terminali ed è il modo più semplice per realizzare una rete di calcolatori a livello Data-Link: <mark style="background: #946EFA;">LAN</mark>, che fanno parte dello stesso **dominio di broadcast** in cui i terminali possono scambiare tra loro messaggio unicast o broadcast.
 Le problematiche delle reti LAN richiedono la definizione di un protocollo specifico per:
@@ -211,6 +225,8 @@ La capacità di trasporto *S* (o throughput) è la quantità di dati effettivame
 Questo significa che il throughput *S* è direttamente proporzionale al tasso di trasmissione delle stazioni *G* e alla probabilità di successo*P*, in altre parole, se aumenti il tasso di trasmissione *G* o migliori la probabilità di successo *P*​, il throughput *S* aumenterà.​
 La probabilità di generare *k* frame durante un certo intervallo di tempo *T* è dato dalla <mark style="background: #946EFA;">distribuzione di Poisson: </mark>
 $$ P[k] = \frac{G^k*e^{-G}}{k!} $$
+
+
 dove:
 *P(k)* = rappresenta la probabilità di generare *k* frame.
 *G^k* = è il tasso di trasmissione delle stazioni elevato alla k-esima potenza.
@@ -232,6 +248,8 @@ Il tempo di vulnerabilità è T (dimezzato rispetto a Pure Aloha), quindi:
 $$P[0] = \frac{G^0 * e^{-G}}{0!} = e^{-G}$$
 Throughput per *G* = 1:
 $$ S = G*e^{-G} = 0.36 $$
+
+[[#Index|Torna all'indice]]
 
 ---
 
@@ -264,6 +282,9 @@ Il **Dominio di Broadcast** è l'insieme dei nodi che possono comunicare diretta
 senza dover risalire al livello rete.
 I due domini possono non coincidere per effetto di apparati di rete (Bridge) che separano i domini di collisione ma non i domini di broadcast.
 
+[[#Index|Torna all'indice]]
+
+---
 ### LAN Wireless Protocolli
 Nelle reti Wireless il dominio di collisione non è nettamente definito come nelle reti wired, in quelle wireless, il concetto di dominio di collisione è meno rilevante. In una rete wireless, i dati vengono trasmessi attraverso onde radio e non ci sono cavi fisici, di conseguenza, i dispositivi non competono fisicamente per lo stesso "spazio di trasmissione" come farebbero in una rete cablata.
 Invece, le collisioni possono ancora verificarsi, ma sono gestite tramite tecniche di accesso al mezzo come il CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance).
@@ -284,3 +305,7 @@ Invece, le collisioni possono ancora verificarsi, ma sono gestite tramite tecnic
 Prima di trasmettere, una stazione wireless ascolta il canale per verificare se è già in uso da altre stazioni. Se il canale è occupato, la stazione attende prima di tentare di trasmettere.
 Se il canale sembra libero dopo l'ascolto, la stazione che desidera trasmettere invia un piccolo pacchetto chiamato "Richiesta di Trasmissione" (RTS) al destinatario. L'RTS indica quanto tempo la stazione intende occupare il canale.
 Il destinatario risponde con un messaggio "Conferma di Trasmissione" (CTS) per confermare che è pronto a ricevere i dati. Il CTS contiene informazioni sulla durata della trasmissione, dopo di che la stazione trasmette i dati al destinatario.
+
+[[#Index|Torna all'indice]]
+
+---
